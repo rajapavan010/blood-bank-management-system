@@ -4,3 +4,23 @@
 *.pyc
 __pycache__
 
+# Python
+*.pyc
+__pycache__/
+*.pyo
+
+# Virtual Environments
+venv/
+
+# SQLite database
+db.sqlite3
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Static files (collected)
+staticfiles/
