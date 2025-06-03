@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: blood-bank-management-system
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn bloodbankmanagement.wsgi
+    autoDeploy: true
+    plan: free
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: bloodbankmanagement.settings
+    buildFilter:
+      paths:
+        - .  # Trigger build for any changes
+    postDeployCommand: python manage.py migrate
